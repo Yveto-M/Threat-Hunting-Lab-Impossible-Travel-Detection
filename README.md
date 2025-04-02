@@ -2,7 +2,7 @@
 # 🚨 Threat Hunting Lab: Impossible Travel Detection
 
 ## 📘 Overview
-This lab simulates a common identity-related threat: **Impossible Travel** — when a user logs in from two or more geographic locations in a short period, raising the possibility of account compromise. Using **Microsoft Sentinel** and **KQL (Kusto Query Language)**, you'll configure detection logic, trigger an alert, and complete a full incident response cycle per **NIST 800-161** guidelines.
+This lab simulates a common identity-related threat: **Impossible Travel** — when a user logs in from two or more geographic locations in a short period, raising the possibility of account compromise. Using **Microsoft Sentinel** and **KQL (Kusto Query Language)**, I will configure detection logic, trigger an alert, and complete a full incident response cycle per **NIST 800-161** guidelines.
 
 ---
 
