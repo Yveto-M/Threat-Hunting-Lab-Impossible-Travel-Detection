@@ -37,6 +37,7 @@ SigninLogs
 | summarize PotentialImpossibleTravelInstances = count() by UserPrincipalName, UserId
 | where PotentialImpossibleTravelInstances > NumberOfDifferentLocationsAllowed
 ```
+![image](https://github.com/user-attachments/assets/feea9881-6ee5-434c-9306-aadf414671d4)
 
 ### 📌 Rule Settings:
 - **Name**: Impossible Travel Detection
@@ -49,6 +50,7 @@ SigninLogs
 - **Entity Mapping**:
   - `UserId → AadUserId`
   - `UserPrincipalName → DisplayName`
+![image](https://github.com/user-attachments/assets/133e815d-2d00-447d-a3a9-a208a8017672)
 
 ---
 
@@ -81,6 +83,7 @@ SigninLogs
 - **Conclusion**: ✅ **Impossible travel confirmed**
 
 ---
+![image](https://github.com/user-attachments/assets/a8a41675-72d5-422b-8a75-0e7481a4e9e0)
 
 ## 🧭 MITRE ATT&CK Mapping
 - **Tactic**: Credential Access → `T1078` – Valid Accounts
@@ -107,6 +110,7 @@ AzureActivity
 | where tostring(parse_json(Claims)["http://schemas.microsoft.com/identity/claims/objectidentifier"]) == "30688920-e870-49db-82f3-fc9e12135daa"
 ```
 - VM operations (start, accept) and recovery service errors observed
+![image](https://github.com/user-attachments/assets/1b866340-4bff-432c-8516-a4eacb78b56a)
 
 ### 🧾 Post-Incident Actions
 - Recommend Conditional Access geo-fencing
