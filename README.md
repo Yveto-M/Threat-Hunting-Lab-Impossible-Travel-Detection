@@ -1,4 +1,3 @@
-# Threat-Hunting-Lab-Impossible-Travel-Detection
 
 # 🚨 Threat Hunting Lab: Impossible Travel Detection
 
