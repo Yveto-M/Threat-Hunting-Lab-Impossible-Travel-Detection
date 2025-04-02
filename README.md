@@ -50,7 +50,7 @@ SigninLogs
 - **Entity Mapping**:
   - `UserId → AadUserId`
   - `UserPrincipalName → DisplayName`
-![image](https://github.com/user-attachments/assets/133e815d-2d00-447d-a3a9-a208a8017672)
+![image](https://github.com/user-attachments/assets/c2d697e2-5d85-4ec2-92ec-489cbbd27ed2)
 
 ---
 
