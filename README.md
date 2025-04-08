@@ -126,5 +126,5 @@ AzureActivity
 ## ✅ Closure
 - Incident status: **True Positive – Account Compromise**
 - No further lateral movement detected
-- Documented all findings in Sentinel
+- Documented all findings in Sentinel and report to management 
 - Case closed
