@@ -1,0 +1,57 @@
+# Threat Hunting and Security Operations
+
+## Threat Hunting Scenario: Impossible Travel Detection
+
+### Overview
+
+This lab simulates an "impossible travel" sign-in pattern, where a user appears to log in from geographically distant locations in an unfeasible time frame—an indicator of potential credential compromise. The goal was to detect anomalous logins, investigate post-compromise activity, and perform full incident response in Microsoft Sentinel and Azure.
+
+### Environment
+
+- Microsoft Sentinel
+- Microsoft Defender for Cloud
+- Azure AD
+- Windows 10 VM
+- Kusto Query Language (KQL)
+
+### Simulated Activity
+
+- User account logged in from two geographically distant IP addresses within a short timeframe, simulating an "impossible travel" anomaly.
+- Post-compromise activity was initiated within Azure, including VM access attempts.
+
+### Investigation Process
+
+- **Data Source:** `SigninLogs`  
+- **Detection Rule:** Created a scheduled query rule to detect sign-ins from two different countries within 30 minutes.
+- **KQL Logic:**
+  - Queried `SigninLogs` for unique IPs and country locations.
+  - Detected impossible travel using time and location constraints.
+  - Correlated user behavior across timelines to confirm compromise.
+
+- **Post-Login Investigation:**
+  - Queried `AzureActivity` logs to identify actions taken after the suspicious login.
+  - Detected unusual administrative behavior indicative of lateral movement or recon.
+
+### Incident Response Actions
+
+- **NIST 800-61 Aligned Response:**
+  - Isolated affected user account.
+  - Escalated incident to management.
+  - Implemented conditional access policies to restrict risky sign-ins.
+  - Required password reset and MFA enforcement.
+
+### MITRE ATT&CK Mapping
+
+| Technique ID | Name                            | Description                         |
+|--------------|----------------------------------|-------------------------------------|
+| T1078        | Valid Accounts                  | Use of compromised credentials      |
+| T1078.004    | Cloud Accounts                  | Access via Azure AD credentials     |
+
+
+| Detection Rule | Investigation Queries | Alert Summary |
+|----------------|------------------------|----------------|
+| ![Detection Rule](Screenshots/detection-rule.png) | ![KQL Query](Screenshots/kql-query.png) | ![Alert Summary](Screenshots/alert-summary.png) |
+
+### Conclusion
+
+This lab demonstrated how to proactively detect and respond to credential-based threats using Microsoft Sentinel. By correlating login locations and timeline data, we confirmed malicious activity and followed a structured response process. This scenario emphasizes the importance of monitoring identity-based attacks and enforcing conditional access policies in cloud environments.
